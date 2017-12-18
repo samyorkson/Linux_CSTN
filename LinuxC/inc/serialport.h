@@ -29,17 +29,16 @@
 extern int Open_SerialPort(void);
 extern void Close_SerialPort(int fd);
 extern int GetOptions_SerialPort(int fd, struct termios *options);
-extern void Setting_SerialPort(int fd, t_SerialPortSet *opt, 
+extern void Setting_SerialPort(int fd, struct SerialPortSet *opt, 
 struct termios *options);
 
-/* Defining the type of serial port settings */
-typedef struct t_SerialPortSet {
+/* Structure that defines the set of serial properties */
+struct SerialPortSet {
     int speed;
     int datasize;
     int parity;
     int stopsize;
     int flowctrl;
 };
-
 
 #endif
